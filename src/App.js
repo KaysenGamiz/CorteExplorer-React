@@ -46,55 +46,63 @@ export default function App() {
     };
 
     return (
-        <div className="container mt-5">
-            <h1>Información de Cortes</h1>
-            <div className="container">
-                <div className="row">
-                    <div className="col">
-                        <h6>Buscar por RCC</h6>
-                        <div className="input-group w-75 mb-3">
-                            <input type="text" className="form-control" placeholder="RCC" aria-label="RCC" aria-describedby="basic-addon2" ref={inputByRCCRef} />
-                            <button className="btn btn-outline-success" type="button" onClick={handleSearchByRCC}>Buscar</button>
-                        </div>
-                        <h6>Buscar entre RCCs</h6>
-                        <div className="input-group w-75 mb-3">
-                            <input type="text" className="form-control" placeholder="RCC 1" aria-label="RCC 1" aria-describedby="basic-addon2" ref={inputBetweenRCC1Ref} />
-                            <input type="text" className="form-control" placeholder="RCC 2" aria-label="RCC 2" aria-describedby="basic-addon2" ref={inputBetweenRCC2Ref} />
-                            <button className="btn btn-outline-success" type="button" onClick={handleSearchBetweenRCCs}>Buscar</button>
-                        </div>
-                    </div>
-                    <div className="col">
-                        <h6>Buscar por Fecha</h6>
-                        <div className="input-group w-75 mb-3">
-                            <input type="date" className="form-control" placeholder="DD/MM/YY" aria-label="DD/MM/YY" aria-describedby="basic-addon2" ref={inputByDateRef} />
-                            <button className="btn btn-outline-success" type="button" onClick={handleSearchByDate}>Buscar</button>
-                        </div>
-                        <h6>Buscar entre Fechas</h6>
-                        <div className="input-group w-75 mb-3">
-                            <input type="date" className="form-control" placeholder="DD/MM/YY" aria-label="DD/MM/YY" aria-describedby="basic-addon2" ref={inputBetweenDates1Ref} />
-                            <input type="date" className="form-control" placeholder="DD/MM/YY" aria-describedby="basic-addon2" ref={inputBetweenDates2Ref} />
-                            <button className="btn btn-outline-success" type="button" onClick={handleSearchBetweenDates}>Buscar</button>
-                        </div>
-                    </div>
+<div className="container mt-5">
+    <h1>Información de Cortes</h1>
+    <div className="container">
+        <div className="row">
+            <div className="col-lg-6 mb-3">
+                <h6>Buscar por RCC</h6>
+                <div className="d-flex flex-column flex-md-row gap-2">
+                    <input type="text" className="form-control mb-2 mb-md-0" placeholder="RCC" aria-label="RCC" aria-describedby="basic-addon2" ref={inputByRCCRef} />
+                    <button className="btn btn-outline-success" type="button" onClick={handleSearchByRCC}>Buscar</button>
                 </div>
             </div>
-            <div className="row mt-3">
-                <div className="col-md-12">
-                    <h2>Lista de Cortes</h2>
-                    <div className="row justify-content-around mt-3">
-                        <div className="col-md-12">
-                            <button className="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target=".accordion-collapse" aria-expanded="false" aria-controls="accordionCortes">
-                                Expandir/Cerrar Todos
-                            </button>
-                            <button className="btn btn-danger" type="button" onClick={deleteAccordionItems}>
-                                Borrar Todas Las Búsquedas
-                            </button>
-                        </div>
-                    </div>
-                    <br />
-                    <div className="accordion" id="accordionCortes"></div>
+            <div className="col-lg-6 mb-3">
+                <h6>Buscar entre RCCs</h6>
+                <div className="d-flex flex-column flex-md-row gap-2">
+                    <input type="text" className="form-control mb-2 mb-md-0" placeholder="RCC 1" aria-label="RCC 1" aria-describedby="basic-addon2" ref={inputBetweenRCC1Ref} />
+                    <input type="text" className="form-control mb-2 mb-md-0" placeholder="RCC 2" aria-label="RCC 2" aria-describedby="basic-addon2" ref={inputBetweenRCC2Ref} />
+                    <button className="btn btn-outline-success" type="button" onClick={handleSearchBetweenRCCs}>Buscar</button>
+                </div>
+            </div>
+            <div className="col-lg-6 mb-3">
+                <h6>Buscar por Fecha</h6>
+                <div className="d-flex flex-column flex-md-row gap-2">
+                    <input type="date" className="form-control mb-2 mb-md-0" placeholder="DD/MM/YY" aria-label="DD/MM/YY" aria-describedby="basic-addon2" ref={inputByDateRef} />
+                    <button className="btn btn-outline-success" type="button" onClick={handleSearchByDate}>Buscar</button>
+                </div>
+            </div>
+            <div className="col-lg-6 mb-3">
+                <h6>Buscar entre Fechas</h6>
+                <div className="d-flex flex-column flex-md-row gap-2">
+                    <input type="date" className="form-control mb-2 mb-md-0" placeholder="DD/MM/YY" aria-label="DD/MM/YY" aria-describedby="basic-addon2" ref={inputBetweenDates1Ref} />
+                    <input type="date" className="form-control mb-2 mb-md-0" placeholder="DD/MM/YY" aria-describedby="basic-addon2" ref={inputBetweenDates2Ref} />
+                    <button className="btn btn-outline-success" type="button" onClick={handleSearchBetweenDates}>Buscar</button>
                 </div>
             </div>
         </div>
+    </div>
+    <div className="row mt-3">
+        <div className="col-md-12">
+            <h2>Lista de Cortes</h2>
+            <div className="row justify-content-around mt-3">
+                <div className="col-md-12">
+                    <div className="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <button className="btn btn-primary me-md-2 mb-2" type="button" data-bs-toggle="collapse" data-bs-target=".accordion-collapse" aria-expanded="false" aria-controls="accordionCortes">
+                            Expandir/Cerrar Todos
+                        </button>
+                        <button className="btn btn-danger mb-2" type="button" onClick={deleteAccordionItems}>
+                            Borrar Todas Las Búsquedas
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div className="accordion" id="accordionCortes"></div>
+        </div>
+    </div>
+</div>
+
+
     );
 }
